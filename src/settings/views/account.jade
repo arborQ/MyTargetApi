@@ -1,0 +1,17 @@
+.h4 {{ 'settings.accountLabel' | i18n }}
+fieldset(ng-form="settingsForm")
+  .form-group
+    label(for="name") {{ 'settings.language' | i18n }}
+    select.form-control(ng-model="ctr.model.language")
+      option(value="en-US") English
+      option(value="pl-PL") Polish
+  .form-group
+    label(for="name") {{ 'settings.timezone' | i18n }}
+    select.form-control(ng-model="ctr.model.timezone")
+      option(value="2") +02
+      option(value="1") +01
+      
+  div.btn-group
+    button.btn.btn-primary(ng-disabled="!(settingsForm | allowSave:ctr.model:ctr.originModel)") {{ 'common.save' | i18n }}
+    a.btn.btn-warning(ui-sref="^")  {{ 'common.cancel' | i18n }}
+      

@@ -1,0 +1,20 @@
+.card
+  .card-block
+    h4.card-title {{ 'users.headerText' | i18n:ctr.originModel.name}}
+    fieldset(ng-form="editUser")
+      .form-group
+        label(for="name") {{ 'users.userNameLabel' | i18n }}
+        input(type="text", class="form-control", id="name", name="name", ng-maxlength="10", ng-required="true" ng-model="ctr.model.name")
+        div(ng-messages="editUser.name.$error")
+          span.label.label-danger(ng-message="required") {{ 'validation.required' | i18n }}
+          span.label.label-danger(ng-message="maxlength") {{ 'validation.maxlength' | i18n:10 }}
+      .form-group
+        label(for="email") {{ 'users.emailLabel' | i18n }}
+        input(type="email", class="form-control", id="email", name="email", ng-required="true", ng-maxlength="30", ng-model="ctr.model.email")
+        div(ng-messages="editUser.email.$error")
+          span.label.label-danger(ng-message="required") {{ 'validation.required' | i18n }}
+          span.label.label-danger(ng-message="maxlength") {{ 'validation.maxlength' | i18n:30 }}
+          span.label.label-danger(ng-message="email") {{ 'validation.email' | i18n }}
+    div.btn-group
+      button.btn.btn-primary(ng-disabled="!(editUser | allowSave:ctr.model:ctr.originModel)") {{ 'common.save' | i18n }}
+      a.btn.btn-warning(ui-sref="^")  {{ 'common.cancel' | i18n }}

@@ -1,0 +1,5 @@
+{
+  "required" : "This field is required.",
+  "maxlength" : "Value can't be longer than {1} chars.",
+  "email" : "This is not valid email format."
+}

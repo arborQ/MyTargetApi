@@ -1,0 +1,37 @@
+{
+  "name": "MyTarget",
+  "version": "0.0.0",
+  "homepage": "https://github.com/arborQ/MyTarget",
+  "authors": [
+    "Lukasz Wojcik <lukasz.wojcik@smtsoftware.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-local-storage": "~0.2.2",
+    "angular": "~1.4.7",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "4.0.0-alpha",
+    "jquery": "~2.1.4",
+    "holderjs": "~2.8.2",
+    "angular-resource": "~1.4.7",
+    "AngularJS-Toaster": "angularjs-toaster#~0.4.15",
+    "angular-jwt": "~0.0.9",
+    "angular-localization": "~1.2.1"
+  },
+  "devDependencies": {
+    "font-awesome": "~4.4.0",
+    "angular-bootstrap": "~0.14.1",
+    "angular-messages": "~1.4.7"
+  }
+}

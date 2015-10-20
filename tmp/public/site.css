@@ -1,0 +1,49 @@
+#header {
+  background-color: #d86a6a;
+  height: 64px;
+  color: #FFF;
+}
+#header > a {
+  color: #FFF;
+}
+#header > a.user > img {
+  height: 44px;
+  width: 44px;
+  margin: 10px 10px;
+}
+#header.flex-container {
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-container {
+  display: flex;
+}
+.flex-container.inline {
+  display: inline-flex;
+}
+div.list-edit {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+div.list-edit > .list-container {
+  flex-grow: 10;
+}
+div.list-edit > .edit-container {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+div.list-group {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-flow: column;
+}
+div.list-group .list-group-item {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+div.list-group .list-group-item > flex-icon {
+  flex-basis: 20px;
+  flex-shrink: 0;
+}

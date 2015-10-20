@@ -1,0 +1,6 @@
+ul.nav.nav-tabs
+  li.nav-item
+    a.nav-link(ui-sref="settings", ui-sref-active-eq="active") {{ 'settings.summaryLabel' | i18n }}
+  li.nav-item
+    a.nav-link(ui-sref=".account", ui-sref-active="active") {{ 'settings.accountLabel' | i18n }}
+div.tab-content(ui-view="") summary
