@@ -13,7 +13,10 @@ var auth = angular.module('ar-auth', ['ui.router', 'ngResource', 'angular-jwt', 
     name: 'login',
     url: '/login',
     data : { access : <application.auth.IAuthAccess>{ onlyAnonymous : true }, icon : 'fa-sign-in' },
-    resolve : { restricted : (authService : application.auth.IAuthService) => { return authService.IsAnnonymous();} },
+    resolve : {
+      restricted : (authService : application.auth.IAuthService) => { return authService.IsAnnonymous();} ,
+      authRes : (locale : any) => locale.ready('auth')
+    },
     templateUrl: 'auth/views/login.html',
     controller: 'logInCtr',
     controllerAs: 'ctr'

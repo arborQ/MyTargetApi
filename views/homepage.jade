@@ -6,7 +6,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
-    title= title
+    title MyTarget
     if production
       link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css')
       link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.css')
@@ -36,9 +36,8 @@ html(lang='en')
         a(ui-sref="home", ng-click="appCtr.logOut($event)")  {{ 'common.logout' | i18n }}
       #header.container-fluid.flex-container(ng-if="!appCtr.userData")
         a(ui-sref="login") {{ 'common.login' | i18n }}
-      .alert.alert-success.animate(ng-show="$loading") loading ...
+      spiner(is-visible="$loading")
       #page-content-wrapper(ui-view="")
-    script(src="structure.js")
     if production
       script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js")
       script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-cookies.min.js")

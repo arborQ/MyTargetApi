@@ -16,6 +16,8 @@
     ],
     "files": [
         "src/application/controllers/applicationCtr.ts",
+        "src/application/controllers/spinerCtr.ts",
+        "src/application/directives/spinerDir.ts",
         "src/application/factories/errorInterceptorFactory.ts",
         "src/application/filters/allowSave.ts",
         "src/application/filters/availableStates.ts",

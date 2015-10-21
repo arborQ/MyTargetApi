@@ -14,12 +14,12 @@ jsonMin = require('gulp-jsonmin'),
 rename = require('gulp-rename'),
 argv = require('yargs').argv;
 
-var sourceDir = './src', destinDir = './tmp/public';
+var sourceDir = './src', destinDir = './.tmp/public';
 
 gulp.task('less', function () {
   return gulp.src([sourceDir + '/**/*.less', '!./src/client/variables.less'])
     .pipe(less())
-    .pipe(gulpIf(argv.production || argv.p, concat('site.min.css')))
+    .pipe(concat('site.css'))
     .pipe(gulpIf(argv.production || argv.p, minCss()))
     .pipe(gulp.dest(destinDir));
 });

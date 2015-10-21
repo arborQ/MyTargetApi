@@ -13,6 +13,7 @@ class logInCtr {
             authService.SetToken(res.token);
             $state.go('users');
           }
+        }).finally(() =>{
           $rootScope.$loading = false;
         });
       }

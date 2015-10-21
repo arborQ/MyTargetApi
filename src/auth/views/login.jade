@@ -3,9 +3,9 @@
   .card-block
     form(name="loginForm", ng-submit="ctr.save(model, loginForm, $event)")
       .form-group
-        label(for='login') Login
-        input#login.form-control(type='text', placeholder='Login', ng-model='model.login', ng-required="true")
+        label(for='login') {{ 'auth.login' | i18n }}
+        input#login.form-control(type='text', placeholder="{{ 'auth.login' | i18n }}", ng-model='model.login', ng-required="true")
       .form-group
-        label(for='password') Password
-        input#password.form-control(type='password', placeholder='Password', ng-model='model.password', ng-required="true")
-      button.btn.btn-default(type='submit', ng-disabled="loginForm.$invalid || $loading") Log In
+        label(for='password') {{ 'auth.password' | i18n }}
+        input#password.form-control(type='password', placeholder="{{ 'auth.password' | i18n }}", ng-model='model.password', ng-required="true")
+      button.btn.btn-default(type='submit', ng-disabled="!(loginForm | allowSave:ctr.model:ctr.originModel)") {{'common.loginBtn' | i18n}}
