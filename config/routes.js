@@ -34,8 +34,8 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
-
+  },
+  "GET /authorization/login": { response: 'forbidden' }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
