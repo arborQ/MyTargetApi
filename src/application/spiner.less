@@ -4,15 +4,18 @@
 .spinner {
   width: 100%;
   text-align: center;
-  position: absolute;
-  z-index: 999;
-  top: -80px;
-  transition: top 0.5s ease;
+
   &.show{
-    top: 30px;
+    svg{
+      top: 30px;
+    }
   }
   svg{
     animation: rotator @duration linear infinite;
+    position: absolute;
+    z-index: 999;
+    top: -80px;
+    transition: top 0.5s ease;
     .path {
       stroke-dasharray: @offset;
       stroke-dashoffset: 0;

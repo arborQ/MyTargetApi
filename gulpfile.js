@@ -74,7 +74,15 @@ gulp.task('locale', function(){
   languagePackage('en-US');
   languagePackage('pl-PL');
 });
-gulp.task('default', [ 'less' , 'clientTs', 'jade', 'locale' ], function () {});
+
+gulp.task('copyAssets', function(){
+  return gulp.src('./assets/**')
+  .pipe(gulp.dest(destinDir))
+});
+
+gulp.task('default', [ 'copyAssets', 'less' , 'clientTs', 'jade', 'locale' ], function () {});
+
+//TODO: move to separated watchers
 gulp.task('watch', [ 'default'], function() {
   return gulp.watch(sourceDir + '/**/*.{ts,jade,less,json}', [ 'default' ]);
 });
