@@ -12,9 +12,15 @@ minCss = require('gulp-minify-css')
 flat = require('gulp-flatten'),
 jsonMin = require('gulp-jsonmin'),
 rename = require('gulp-rename'),
-argv = require('yargs').argv;
+argv = require('yargs').argv,
+clean = require('gulp-clean');
 
 var sourceDir = './src', destinDir = './.tmp/public';
+
+gulp.task('clean', function () {
+    return gulp.src(destinDir, {read: false})
+        .pipe(clean());
+});
 
 gulp.task('less', function () {
   return gulp.src([sourceDir + '/**/*.less', '!./src/client/variables.less'])

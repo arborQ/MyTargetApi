@@ -5,18 +5,6 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "grunt": "0.4.2",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-coffee": "~0.10.1",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-cssmin": "~0.9.0",
-    "grunt-contrib-jst": "~0.6.0",
-    "grunt-contrib-less": "0.11.1",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-sails-linker": "~0.9.5",
-    "grunt-sync": "~0.0.4",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-flatten": "^0.2.0",
@@ -36,6 +24,8 @@
     "morgan": "^1.6.1",
     "mysql": "^2.9.0",
     "nconf": "^0.8.2",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "rc": "~0.5.0",
     "sails": "~0.11.2",
@@ -43,10 +33,11 @@
     "sails-hook-babel": "^5.0.1",
     "sequelize": "^3.12.0",
     "serve-favicon": "^2.3.0",
-    "yargs": "^3.27.0"
+    "yargs": "^3.27.0",
+    "bower": "^1.5.3"
   },
   "devDependencies": {
-    "bower": "^1.5.3",
+    "gulp-clean": "^0.3.1",
     "nodemon": "^1.7.3",
     "sails-hook-autoreload": "^0.12.0"
   },

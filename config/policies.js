@@ -18,7 +18,8 @@
 
 
 module.exports.policies = {
-
+  '*': 'isAuthenticated',
+  'Authorization': { '*': true }
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions (`true` allows public     *
