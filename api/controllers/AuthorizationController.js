@@ -9,24 +9,26 @@ module.exports = {
 	login : function(req, res){
 
 
-
-		passport.authenticate('local', function(err, user, info)
-	         {
-	            //  if ((err) || (!user))
-	            //  {
-							// 	 throw "Invalid login 1";
-	            //  }
-
-	             req.logIn(user, function(err)
-	             {
-								 console.log('out :)')
-	                 if (err)
-	                 {
-										 throw "Invalid login 2";
-	                 }
-	                 return res.json({ ok : true });
-	             });
-	         })(req, res);
+		var aaa = passport.authenticate('jwt', { session: false});
+		console.log(aaa);
+		return res.json({ ok : true });
+		// passport.authenticate('local', function(err, user, info)
+	  //        {
+	  //           //  if ((err) || (!user))
+	  //           //  {
+		// 					// 	 throw "Invalid login 1";
+	  //           //  }
+		//
+	  //            req.logIn(user, function(err)
+	  //            {
+		// 						 console.log('out :)')
+	  //                if (err)
+	  //                {
+		// 								 throw "Invalid login 2";
+	  //                }
+	  //                return res.json({ ok : true });
+	  //            });
+	  //        })(req, res);
 
 
 
