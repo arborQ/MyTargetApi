@@ -5,45 +5,16 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 var passport = require('passport');
+var jwt = require('jsonwebtoken');
+var { seacret, expiresIn } = require('../../config/webconfig');
 module.exports = {
-	login : function(req, res){
-
-
-		var aaa = passport.authenticate('jwt', { session: false});
-		console.log(aaa);
-		return res.json({ ok : true });
-		// passport.authenticate('local', function(err, user, info)
-	  //        {
-	  //           //  if ((err) || (!user))
-	  //           //  {
-		// 					// 	 throw "Invalid login 1";
-	  //           //  }
-		//
-	  //            req.logIn(user, function(err)
-	  //            {
-		// 						 console.log('out :)')
-	  //                if (err)
-	  //                {
-		// 								 throw "Invalid login 2";
-	  //                }
-	  //                return res.json({ ok : true });
-	  //            });
-	  //        })(req, res);
-
-
-
-
-
-
-	// 	var { login, password } = req.body;
-	// 	if(login === 'arbor' && password === '123'){
-  //   setTimeout(function(){
-  //     res.json({ token : 'token' });
-  //   }, 100);
-  // }else{
-  //   setTimeout(function(){
-  //     res.json({ success : false });
-  //   }, 2000);
-  // }
+	login : (req, res) => {
+		var { login, password } = req.body;
+		if(login === 'arbor' && password === '123'){
+			var token = jwt.sign({ id : "1",  login : 'arbor', roles : [ 'users' ], isAdmin : true }, seacret, { expiresIn : expiresIn });
+			res.setHeader('authorization', 'JWT ' + token);
+			return res.json({ success : true });
+		}
+		return res.json({ success : false });
 	}
 };

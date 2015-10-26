@@ -13,11 +13,10 @@ passport.deserializeUser(function(id, done) {
   });
 });
 var options = {
-  secretOrKey: '3540E9BD-04DB-4AF3-8AD6-41E8428FB691'
+  secretOrKey: require('./webconfig').seacret
 };
 passport.use(new JwtStrategy(options, function(jwt_payload, done) {
-  console.log(jwt_payload.sub);
-  done(null, { id : 1,  login : 'arbor' });
+  done(null, jwt_payload);
 }));
 
 // passport.use(new LocalStrategy({
