@@ -12,8 +12,7 @@ module.exports = {
 		var { login, password } = req.body;
 		if(login === 'arbor' && password === '123'){
 			var token = jwt.sign({ id : "1",  login : 'arbor', roles : [ 'users' ], isAdmin : true }, seacret, { expiresIn : expiresIn });
-			res.setHeader('authorization', 'JWT ' + token);
-			return res.json({ success : true });
+			return res.json({ success : true, token : token });
 		}
 		return res.json({ success : false });
 	}

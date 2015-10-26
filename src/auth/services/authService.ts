@@ -30,7 +30,7 @@ class authService implements application.auth.IAuthService {
   SetToken(token: string): application.auth.IUserData {
     this.token = token;
     this.localStorageService.set(this.storageKey, token);
-    this.$http.defaults.headers.common.Authorization = token;
+    this.$http.defaults.headers.common.Authorization = "JWT " + token;
     this.validationPromise.resolve(token);
     this.validationPromise = this.$q.defer();
     this.validationPromise.resolve(token);
