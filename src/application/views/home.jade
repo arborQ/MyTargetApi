@@ -1,0 +1,5 @@
+paper-card(heading="{{halloMessage}}")
+  .card-content
+    paper-input( label="label :{{test}}", ng-model="test", ng-disabled="test.length > 3")
+  .card-actions
+    paper-button {{test}}

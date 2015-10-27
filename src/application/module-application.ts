@@ -10,7 +10,7 @@ var app = angular.module('app', ['ui.router', 'ngLocalize' , 'ngLocalize.Config'
   $httpProvider.interceptors.push('errorInterceptorFactory');
 
   $stateProvider.state({
-    name: 'home', url: '/', template: '<div>home :)<div ui-view=""></div></div>'
+    name: 'home', url: '/', controller : ($scope : any) => { $scope.halloMessage = "from angular"; }, templateUrl : "/application/views/home.html"
   });
 
   $stateProvider.state({

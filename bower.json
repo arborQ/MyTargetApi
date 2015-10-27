@@ -27,7 +27,11 @@
     "angular-resource": "~1.4.7",
     "AngularJS-Toaster": "angularjs-toaster#~0.4.15",
     "angular-jwt": "~0.0.9",
-    "angular-localization": "~1.2.1"
+    "angular-localization": "~1.2.1",
+    "paper-button": "PolymerElements/paper-button#1.0.0",
+    "webcomponentsjs": "~0.7.15",
+    "paper-card": "PolymerElements/paper-card#1.0.0",
+    "paper-input": "PolymerElements/paper-input#1.0.0"
   },
   "devDependencies": {
     "font-awesome": "~4.4.0",
