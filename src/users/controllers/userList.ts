@@ -1,7 +1,7 @@
 class userList{
-  model : Array<any>;
+  model : Array<ng.resource.IResource<any>>;
   constructor($resource: ng.resource.IResourceService){
-    this.model = $resource('/user').query()
+    this.model = $resource('/user').query();
   }
 }
 

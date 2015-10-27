@@ -61,7 +61,7 @@ gulp.task('structureTs', function(){
 
 });
 
-gulp.task('clientTs', ['structureTs'], function(){
+gulp.task('clientTs', function(){
   if(argv.production || argv.p){
     return gulp.src([ './typings/**/*.d.ts',sourceDir + '/**/*.d.ts', sourceDir + '/**/*.ts' ])
       .pipe(ts({ mode : 'amd' }))
@@ -88,7 +88,22 @@ gulp.task('copyAssets', function(){
 
 gulp.task('default', [ 'copyAssets', 'less' , 'clientTs', 'jade', 'locale' ], function () {});
 
+gulp.task('watchLess', [ 'less' ], function() {
+  return gulp.watch(sourceDir + '/**/*.less', [ 'less' ]);
+});
+
+gulp.task('watchTs', [ 'clientTs' ], function() {
+  return gulp.watch(sourceDir + '/**/*.ts', [ 'clientTs' ]);
+});
+
+gulp.task('watchJade', [ 'jade' ], function() {
+  return gulp.watch(sourceDir + '/**/*.jade', [ 'jade' ]);
+});
+
+gulp.task('watchJson', [ 'locale' ], function() {
+  return gulp.watch(sourceDir + '/**/*.json', [ 'locale' ]);
+});
+
 //TODO: move to separated watchers
-gulp.task('watch', [ 'default'], function() {
-  return gulp.watch(sourceDir + '/**/*.{ts,jade,less,json}', [ 'default' ]);
+gulp.task('watch', [ 'watchLess', 'watchTs', 'watchJade', 'watchJson'], function() {
 });

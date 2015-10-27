@@ -1,4 +1,4 @@
-.list-edit
+.list-edit(ng-show="'users' | isState")
   div.list-group.list-container
     span.list-group-item
       span(style="flex-grow : 11;") {{ 'users.userNameLabel' | i18n }}
@@ -8,4 +8,4 @@
       span(style="flex-grow : 11;") {{ user.name }}
       span(style="flex-grow : 11;") {{ user.email }}
       span.fa(ng-class="{ true : 'fa-toggle-on', false : 'fa-toggle-off' }[user.isActive]")
-  div.edit-container(ui-view="", ng-if="!('users' | isState)")
+  div.edit-container(ui-view="")
