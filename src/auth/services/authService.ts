@@ -7,15 +7,14 @@ class authService implements application.auth.IAuthService {
     private jwtHelper: ng.jwt.IJwtHelper,
     private $q : ng.IQService,
     private $http : ng.IHttpService,
-    $resource : ng.resource.IResourceService,
     private localStorageService : any,
     private $rootScope : ng.IScope
   ) {
     this.validationPromise = $q.defer();
     var savedToken = localStorageService.get(this.storageKey);
     if(savedToken){
-      $resource('/api/auth').get({ token : savedToken }).$promise.then((token : any) => {
-        this.SetToken(token.token);
+      $http.post('/Authorization/verify', { token : 'JWT ' + savedToken }).then((token : any) => {
+        this.SetToken(savedToken);
       }).catch(()=>{
         this.validationPromise.reject(null);
       });

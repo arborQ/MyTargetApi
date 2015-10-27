@@ -117,6 +117,7 @@ nbproject
 .idea
 .node_history
 
+src/**/*.js
 build/Release
 node_modules
 bower_components
