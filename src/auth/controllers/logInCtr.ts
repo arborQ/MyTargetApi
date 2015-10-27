@@ -9,7 +9,10 @@ class logInCtr {
       if (form.$valid) {
         $rootScope.$loading = true;
         $http.post('/authorization/login', model)
-        .success((response : any) => authService.SetToken(response.token))
+        .success((response : any) => {
+          authService.SetToken(response.token);
+          $state.go('users');
+        })
         .finally(() => $rootScope.$loading = false);
         // .save(model)
         // .$promise.then((res) => {
