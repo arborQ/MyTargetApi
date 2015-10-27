@@ -30,6 +30,7 @@ html(lang='en')
               i.fa(ng-class='item.data.icon') 
               span {{ 'menu.' + (item.name | normalize) | i18n}}
       #header.container-fluid.flex-container(ng-if="!!appCtr.userData")
+        div(ui-view="top")
         a.user(ui-sref="settings.account")
           img(src="images/user.png")
         a(ui-sref="home", ng-click="appCtr.logOut($event)")  {{ 'common.logout' | i18n }}

@@ -8,4 +8,4 @@
       span(style="flex-grow : 11;") {{ user.name }}
       span(style="flex-grow : 11;") {{ user.email }}
       span.fa(ng-class="{ true : 'fa-toggle-on', false : 'fa-toggle-off' }[user.isActive]")
-  div.edit-container(ui-view="", ng-if="'users.edit' | isState")
+  div.edit-container(ui-view="", ng-if="!('users' | isState)")

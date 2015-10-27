@@ -1,6 +1,6 @@
 .card
   .card-block
-    h4.card-title {{ 'users.headerText' | i18n:ctr.originModel.name}}
+    h4.card-title(ng-if="ctr.originModel") {{ 'users.headerText' | i18n:ctr.originModel.name}}
     fieldset(ng-form="editUser")
       .form-group
         label(for="name") {{ 'users.userNameLabel' | i18n }}
@@ -16,5 +16,5 @@
           span.label.label-danger(ng-message="maxlength") {{ 'validation.maxlength' | i18n:30 }}
           span.label.label-danger(ng-message="email") {{ 'validation.email' | i18n }}
     div.btn-group
-      button.btn.btn-primary(ng-disabled="!(editUser | allowSave:ctr.model:ctr.originModel)") {{ 'common.save' | i18n }}
+      button.btn.btn-primary(ng-disabled="!(editUser | allowSave:ctr.model:ctr.originModel)", ng-click="ctr.save(ctr.model)") {{ 'common.save' | i18n }}
       a.btn.btn-warning(ui-sref="^")  {{ 'common.cancel' | i18n }}

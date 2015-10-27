@@ -5,9 +5,14 @@ var usersModule = angular.module('ar-users', ['ui.router', 'ngResource' ,'ngMess
   $stateProvider.state({
     name: 'users',
     url: '/users',
-    templateUrl: 'users/views/userList.html',
-    controllerAs : 'ctr',
-    controller : 'userList',
+    views: {
+      '@' : {
+        templateUrl: 'users/views/userList.html',
+        controllerAs : 'ctr',
+        controller : 'userList'
+      },
+      'top' : { template : '<a ui-sref=".create"><i class="fa fa-plus-circle"></i></a>' }
+    },
     data : { access : <application.auth.IAuthAccess>{ roles : [ 'users' ] }, icon : 'fa-users' },
     resolve: {
       restricted: ($q: ng.IQService, authService: application.auth.IAuthService, $state : ng.ui.IStateService) => {
@@ -16,6 +21,13 @@ var usersModule = angular.module('ar-users', ['ui.router', 'ngResource' ,'ngMess
       commonRes  : (locale : any) => locale.ready('common'),
       usersRes  : (locale : any) => locale.ready('users')
     }
+  });
+
+  $stateProvider.state({
+    name: 'users.create',
+    url: '/create',
+    templateUrl: 'users/views/userEdit.html',
+    controller : 'userCreate', controllerAs : 'ctr'
   });
 
   $stateProvider.state({
