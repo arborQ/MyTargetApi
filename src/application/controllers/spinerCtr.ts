@@ -1,10 +1,12 @@
 class spinerCtr{
+  public isLoading : boolean;
   constructor($rootScope : ng.IScope){
+    this.isLoading = false;
     $rootScope.$on("cfpLoadingBar:started", () => {
-      console.log('started :)')
+      this.isLoading = true;
     });
     $rootScope.$on("cfpLoadingBar:completed", () => {
-      console.log('completed :)')
+      this.isLoading = false;
     });
   }
 }
