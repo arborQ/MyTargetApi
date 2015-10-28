@@ -1,7 +1,7 @@
-class userList{
-  model : Array<ng.resource.IResource<any>>;
+class userList implements application.vm.IListViewModel<models.users.IUser>{
+  model : ng.resource.IResourceArray<models.users.IUser>;
   constructor($resource: ng.resource.IResourceService){
-    this.model = $resource('/user').query();
+    this.model = $resource<models.users.IUser>('/user').query();
   }
 }
 
