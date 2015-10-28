@@ -36,8 +36,8 @@ class authService implements application.auth.IAuthService {
     this.$rootScope.$broadcast("newUserData", this.GetUserData())
     return this.GetUserData();
   }
-  GetUserData() : application.auth.IUserData{
-    return this.jwtHelper.decodeToken<application.auth.IUserData>(this.token);
+  GetUserData() : any{
+    return this.jwtHelper.decodeToken(this.token);
   }
   IsAnnonymous() : ng.IPromise<boolean> {
     var accessPromise = this.$q.defer();
