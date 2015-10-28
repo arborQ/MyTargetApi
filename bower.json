@@ -32,7 +32,8 @@
     "webcomponentsjs": "~0.7.15",
     "paper-card": "PolymerElements/paper-card#1.0.0",
     "paper-input": "PolymerElements/paper-input#1.0.0",
-    "angular-loading-bar": "~0.8.0"
+    "angular-loading-bar": "~0.8.0",
+    "paper-header-panel": "PolymerElements/paper-header-panel#1.0.5"
   },
   "devDependencies": {
     "font-awesome": "~4.4.0",
