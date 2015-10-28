@@ -1,4 +1,5 @@
 {
   "login" : "Login",
-  "password" : "Password"
+  "password" : "Password",
+  "loginTitle" : "Sign in"
 }

@@ -1,6 +1,5 @@
-.card
-  .card-header Login
-  .card-block
+paper-card(heading="{{ 'auth.loginTitle' | i18n }}")
+  .card-content
     form(name="loginForm", ng-submit="ctr.save(model, loginForm, $event)")
       .form-group
         label(for='login') {{ 'auth.login' | i18n }}
@@ -8,4 +7,5 @@
       .form-group
         label(for='password') {{ 'auth.password' | i18n }}
         input#password.form-control(type='password', placeholder="{{ 'auth.password' | i18n }}", ng-model='model.password', ng-required="true")
-      button.btn.btn-default(type='submit', ng-disabled="!(loginForm | allowSave:ctr.model:ctr.originModel)") {{'common.loginBtn' | i18n}}
+      .card-actions
+        button.btn.btn-primary(type='submit', ng-disabled="!(loginForm | allowSave:ctr.model:ctr.originModel)") {{'common.loginBtn' | i18n}}

@@ -1,7 +1,5 @@
-.card
-  .card-block
-    h4.card-title(ng-if="ctr.originModel") {{ 'users.headerText' | i18n:ctr.originModel.name}}
-    
+paper-card(heading="{{ 'users.headerText' | i18n:ctr.originModel.name}}")
+  .card-content
     form(name="editUser", ng-submit="ctr.save(editUser, ctr.model, $event)")
       .form-group
         label(for="name") {{ 'users.userNameLabel' | i18n }}
@@ -19,6 +17,7 @@
       .form-group
         label(for="isActive") {{ 'users.isActiveLabel' | i18n }}
         input(type="checkbox", class="form-control", id="isActive", name="isActive", ng-model="ctr.model.isActive")
-      div.btn-group
-        button.btn.btn-primary(ng-disabled="!(editUser | allowSave:ctr.model:ctr.originModel)", ng-click="ctr.save(editUser, ctr.model, $event)") {{ 'common.save' | i18n }}
-        a.btn.btn-warning(ui-sref="^")  {{ 'common.cancel' | i18n }}
+      .card-actions
+        div.btn-group
+          button.btn.btn-primary(ng-disabled="!(editUser | allowSave:ctr.model:ctr.originModel)", ng-click="ctr.save(editUser, ctr.model, $event)") {{ 'common.save' | i18n }}
+          a.btn.btn-warning(ui-sref="^")  {{ 'common.cancel' | i18n }}
