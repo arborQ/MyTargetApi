@@ -3,7 +3,7 @@ paper-card(heading="{{ 'users.headerText' | i18n:ctr.originModel.name}}")
     form(name="editUser", ng-submit="ctr.save(editUser, ctr.model, $event)")
       .form-group
         label(for="name") {{ 'users.userNameLabel' | i18n }}
-        input(type="text", class="form-control", id="name", name="name", ng-maxlength="10", ng-required="true" ng-model="ctr.model.name")
+        input(type="text", class="form-control", id="name", name="name", ng-maxlength="10", ng-required="true", ng-model="ctr.model.name")
         div(ng-messages="editUser.name.$error")
           span.label.label-danger(ng-message="required") {{ 'validation.required' | i18n }}
           span.label.label-danger(ng-message="maxlength") {{ 'validation.maxlength' | i18n:10 }}

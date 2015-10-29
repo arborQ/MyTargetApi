@@ -32,6 +32,8 @@
         "src/auth/services/authService.ts",
         "src/auth/typings/authService.d.ts",
         "src/settings/module-settings.ts",
+        "src/shared/directives/asyncValidation.ts",
+        "src/shared/module-shared.ts",
         "src/users/controllers/userCreate.ts",
         "src/users/controllers/userEdit.ts",
         "src/users/controllers/userList.ts",

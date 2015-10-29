@@ -70,6 +70,7 @@ gulp.task('clientTs', function(){
       .pipe(minJs())
       .pipe(gulp.dest(destinDir));
   }else{
+    jsPackage('shared');
     jsPackage('application');
     jsPackage('auth');
     jsPackage('users');
