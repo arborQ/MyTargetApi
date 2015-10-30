@@ -6,8 +6,8 @@ sharedModule.directive('asyncValidation', ($q: ng.IQService, $http: ng.IHttpServ
   return <ng.IDirective>{
     restrict: 'A',
     require: 'ngModel',
-    scope: { validations: '=asyncValidation' },
-    link: (scope: { validations: Array<IValidationItem> },
+    scope: { validations: '=asyncValidation', modelOptions : '=ngModelOptions' },
+    link: (scope: { validations: Array<IValidationItem>, modelOptions : any },
       instanceElement: ng.IAugmentedJQuery,
       instanceAttributes: ng.IAttributes,
       controller: ng.INgModelController) => {
@@ -32,7 +32,7 @@ sharedModule.directive('asyncValidation', ($q: ng.IQService, $http: ng.IHttpServ
                 }
               })
                 .catch(def.reject);
-            }, 400);
+            }, scope.modelOptions && scope.modelOptions.debounce ? 0 : 400);
           }
           return def.promise;
         }
